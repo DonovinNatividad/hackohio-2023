@@ -4,14 +4,25 @@
 
 /* styles.css */
 .top-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 20px;
-    background-color: #2e026d;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 20px;
+  background-color: amber-100;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.mission-text {
+  text-align: left;
+  padding: 20px;
+  font-weight: bold;
+} 
+
+body {
+  font-family: 'Albert Sans', sans-serif;
+}
+
