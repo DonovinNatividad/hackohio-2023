@@ -50,7 +50,7 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto p-4">
-            <div className="border border-2 border-lime-800 dark:border-green-600 rounded p-4">
+            <div className="border border-2 border-black dark:border-white rounded p-4">
               <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4">
                 Impact Statement
               </h3>
