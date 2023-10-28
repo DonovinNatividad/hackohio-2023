@@ -4,12 +4,7 @@ import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-<<<<<<< HEAD
     <Component {...pageProps} />
-=======
-      <Component {...pageProps} />
-      
->>>>>>> develop
   )
 };
 
