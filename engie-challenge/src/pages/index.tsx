@@ -1,11 +1,11 @@
 import Head from "next/head";
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { ModeToggle } from "~/components/ModeToggle";
+// import { Moon, Sun } from "lucide-react";
+// import { useTheme } from "next-themes";
+// import { ModeToggle } from "~/components/ModeToggle";
 import Footer from '../components/Footer';
 
-import { Button } from "ComponentsUI/ui/button";
+// import { Button } from "ComponentsUI/ui/button";
 import {
   Card,
   CardContent,
@@ -14,8 +14,8 @@ import {
   CardHeader,
   CardTitle,
 } from "ComponentsUI/ui/card"
-import { Input } from "ComponentsUI/ui/input"
-import { Label } from "ComponentsUI/ui/label"
+// import { Input } from "ComponentsUI/ui/input"
+// import { Label } from "ComponentsUI/ui/label"
 import {
   Tabs,
   TabsContent,
@@ -79,7 +79,7 @@ export default function Home() {
           
 
           <div className="container mx-auto p-4">
-            <div className="border border-2 shadow-xl border-black dark:border-white rounded p-4">
+            <div className="border shadow-xl border-black dark:border-white rounded p-4">
               <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4">
                 Impact Statement
               </h3>
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto p-4">
-              <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4 text-center">
+              <h3 className="text-5xl mb-1.5 ml-24 dark:text-stone-50 mt-4 text-center">
                 Water Usage on Campus
               </h3>
               <Tabs defaultValue="reducing-water-consumption" className="w-fill">
