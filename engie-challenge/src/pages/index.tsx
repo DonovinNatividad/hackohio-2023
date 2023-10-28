@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Image from "next/image";
 // import { api } from "~/utils/api";
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+      <Image src="/Content/VonSurprise.png" alt="" width={1000} height={1000}/>
       </main>
     </>
   );
