@@ -31,8 +31,10 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="flex min-h-screen flex-col items-center justify-center bg-stone-25 dark:bg-stone-900">
-          <div className="flex justify-between items-center w-full px-6 top-text">
+      <header className="sticky top-0 bg-stone-50 dark:bg-stone-900"> 
+
+            <div className="flex justify-between items-center w-full px-6 top-text">
+            
             <div className="h-16 w-16">
               <Image
                 src={imageSrc}
@@ -41,6 +43,7 @@ export default function Home() {
                 alt="Logo"
               />
             </div>
+
             <ul className="flex justify-end items-center">
               <li className="mr-10">
                 <BsFillMoonStarsFill
@@ -51,8 +54,13 @@ export default function Home() {
             </ul>
           </div>
 
+       </header>
+
+        <main className="flex min-h-screen flex-col items-center justify-center bg-stone-25 dark:bg-stone-900">
+          
+
           <div className="container mx-auto p-4">
-            <div className="border border-2 border-black dark:border-white rounded p-4">
+            <div className="border border-2 shadow-xl border-black dark:border-white rounded p-4">
               <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4">
                 Impact Statement
               </h3>
