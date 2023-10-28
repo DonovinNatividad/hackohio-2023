@@ -18,9 +18,9 @@
 }
 
 .mission-text {
-  text-align: center;
+  text-align: left;
   padding: 20px;
-  background-color: #84cc16;
+  background-color: #amber-200;
   color: white;
   font-weight: bold;
   font-family: 'Sans-serif', sans-serif; 
