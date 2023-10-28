@@ -49,7 +49,6 @@ export default function Home() {
           <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4">Impact Statement</h3>
           <p className="mission-text text-xl ml-20 mb-3 text-stone-900 dark:text-stone-50">Creating a sustainability dashboard for the Smart Campus Challenge can impact campus behavior by raising awareness, promoting sustainable practices, and fostering competition. It holds the university accountable, provides data for decision-making, and directly supports resource stewardship goals. Additionally, it educates and advocates for sustainability, potentially leading to collaborations and a more eco-conscious campus community.</p>
         </div>
-      <main className="flex min-h-screen flex-col items-center justify-center theme">
       <p>THIS SHOULD CHANGE COLORS DEPENDING ON THEME?</p>
     {modeToggle}
     <Accordion type="single" collapsible className="w-full">
