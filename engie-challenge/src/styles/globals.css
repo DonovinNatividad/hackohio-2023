@@ -14,14 +14,15 @@
   color: white;
   font-size: 36px;
   font-weight: bold;
-  font-family: 'Sans-serif', sans-serif; /* Apply font-sans here */
 }
 
 .mission-text {
   text-align: left;
   padding: 20px;
-  background-color: #amber-200;
-  color: white;
   font-weight: bold;
-  font-family: 'Sans-serif', sans-serif; 
 } 
+
+body {
+  font-family: 'Albert Sans', sans-serif;
+}
+
