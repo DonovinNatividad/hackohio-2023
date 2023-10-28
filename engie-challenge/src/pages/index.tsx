@@ -13,14 +13,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen flex-col items-center justify-center bg-[#f0fdf4]  dark:bg-stone-600">
-        <div className="top-text">Hackathon Engie Project</div>
-        <li>
-          <BsFillMoonStarsFill 
-          onClick={() => setDarkMode(!darkMode)}
-          className="cursor-pointer text-2xl"
-          />
-        </li>
+      <main className="flex min-h-screen flex-col items-center justify-center bg-amber-100 dark:bg-stone-800">
+      <div className="flex justify-between items-center w-full px-6 top-text">
+        <h1>Hackathon Engie Project</h1>
+          <ul className="flex justify-end items-center">
+          <li className="mr-10">
+              <BsFillMoonStarsFill 
+                onClick={() => setDarkMode(!darkMode)}
+                className="cursor-pointer text-2xl"
+              />
+            </li>
+          </ul>
+
+        </div>
+        
         <div>
           <h1 className="text-7xl text-center mb-1.5 font-serif">Impact Statement</h1>
           <p className="mission-text text-xl">Creating a sustainability dashboard for the Smart Campus Challenge can impact campus behavior by raising awareness, promoting sustainable practices, and fostering competition. It holds the university accountable, provides data for decision-making, and directly supports resource stewardship goals. Additionally, it educates and advocates for sustainability, potentially leading to collaborations and a more eco-conscious campus community.</p>
