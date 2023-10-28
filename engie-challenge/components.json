@@ -4,8 +4,8 @@
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "C:\\Users\\nebk2\\hackohio-2023\\engie-challenge\\tailwind.config.ts",
-    "css": "C:\\Users\\nebk2\\hackohio-2023\\engie-challenge\\src\\styles\\globals.css",
+    "config": "tailwind.config.ts",
+    "css": "src\\styles\\globals.css",
     "baseColor": "slate",
     "cssVariables": true
   },
