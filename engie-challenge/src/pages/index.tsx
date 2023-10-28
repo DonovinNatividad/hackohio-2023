@@ -22,8 +22,9 @@ export default function Home() {
           />
         </li>
         <div>
-          <p className="mission-text">Creating a sustainability dashboard for the Smart Campus Challenge can impact campus behavior by raising awareness, promoting sustainable practices, and fostering competition. It holds the university accountable, provides data for decision-making, and directly supports resource stewardship goals. Additionally, it educates and advocates for sustainability, potentially leading to collaborations and a more eco-conscious campus community.</p>
-          
+          <h1 className="text-7xl text-center mb-1.5 font-serif">Impact Statement</h1>
+          <p className="mission-text text-xl">Creating a sustainability dashboard for the Smart Campus Challenge can impact campus behavior by raising awareness, promoting sustainable practices, and fostering competition. It holds the university accountable, provides data for decision-making, and directly supports resource stewardship goals. Additionally, it educates and advocates for sustainability, potentially leading to collaborations and a more eco-conscious campus community.</p>
+           
         </div>
       </main>
       </div>
