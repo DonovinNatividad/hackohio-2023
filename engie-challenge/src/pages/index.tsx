@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-      <Image src="/images/VonSurprise.png" alt="" width={1150} height={2600}/>
+      <Image src="/images/VonSuprise.png" alt="" width={1150} height={2600}/>
       </main>
     </>
   );
