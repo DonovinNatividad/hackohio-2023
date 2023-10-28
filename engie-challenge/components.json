@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "C:\\Users\\nebk2\\hackohio-2023\\engie-challenge\\tailwind.config.ts",
+    "css": "C:\\Users\\nebk2\\hackohio-2023\\engie-challenge\\src\\styles\\globals.css",
+    "baseColor": "slate",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "ComponentsUi",
+    "utils": "ComponentsUi/ui/lib/utils"
+  }
+}

@@ -1,4 +1,7 @@
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "~/components/theme-provider"
+import type { ReactNode } from "react"
+import "styles/global.css"
+type RootLayoutProps = { children: ReactNode };
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
