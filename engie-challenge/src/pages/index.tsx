@@ -13,6 +13,7 @@ export default function Home() {
         <div className="top-text">Hackathon Engie Project</div>
         <div>
           <p className="mission-text">Creating a sustainability dashboard for the Smart Campus Challenge can impact campus behavior by raising awareness, promoting sustainable practices, and fostering competition. It holds the university accountable, provides data for decision-making, and directly supports resource stewardship goals. Additionally, it educates and advocates for sustainability, potentially leading to collaborations and a more eco-conscious campus community.</p>
+          
         </div>
       </main>
     </>
