@@ -1,8 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Head from "next/head";
-import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { ModeToggle } from "~/components/ModeToggle";
+import { ChargeView } from "~/components/ModeToggle";
 import Footer from '../components/Footer';
 
 import { Button } from "ComponentsUI/ui/button";
@@ -16,6 +15,13 @@ import {
 } from "ComponentsUI/ui/card"
 import { Input } from "ComponentsUI/ui/input"
 import { Label } from "ComponentsUI/ui/label"
+// import { api } from "~/utils/api";
+
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
+import  ChartView from "~/components/ModeToggle"; 
+
 import {
   Tabs,
   TabsContent,
@@ -41,6 +47,9 @@ export default function Home() {
   // Define the image source dynamically based on darkMode
   const imageSrc = darkMode ? "/images/hsbDarkMode.png" : "/images/hsbLightMode.png";
 
+  // const hello = api.post.hello.useQuery({ text: "from tRPC" });
+  // const user = useUser();
+  const modeToggle = ChartView();
   return (
     <>
       <div className={darkMode ? "dark" : ""}>

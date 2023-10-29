@@ -1,40 +1,69 @@
-"use client"
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/consistent-indexed-object-style */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+"use client";
+import { BarChart, Card, Subtitle, Title } from "@tremor/react";
+import { useState } from "react";
 
-import * as React from "react"
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
-import { useTheme } from "next-themes"
+const chartdata = [
+  {
+    location: "Kennedy Commons",
+    "Water Usage Hand Washing": 500, // Water usage for hand washing (in gallons)
+    "Water Usage Dishwashing": 250, // Water usage for dishwashing (in gallons)
+  },
+  {
+    location: "Traditions at Scott",
+    "Water Usage Hand Washing": 600,
+    "Water Usage Dishwashing": 200,
+  },
+  {
+    location: "Traditions at Morill",
+    "Water Usage Hand Washing": 450,
+    "Water Usage Dishwashing": 220,
+  },
+  // Add more dining locations as needed
+];
 
-import { Button } from "ComponentsUI/ui/ButtonCode"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "ComponentsUI/ui/dropdown-menu"
+const valueFormatter = (number: number | bigint) =>
+  `${new Intl.NumberFormat("us").format(number)} gallons`;
 
-export function ModeToggle() {
-  const { setTheme } = useTheme()
+const formatters: { [key: string]: any } = {};
+formatters.HandWashing = (number: number) => `${valueFormatter(number)}`;
+formatters.Dishwashing = (number: number) => `${valueFormatter(number)}`;
 
+const Kpis = {
+  HandWashing: "Hand Washing",
+  Dishwashing: "Dishwashing",
+};
+
+const kpiList = [Kpis.HandWashing, Kpis.Dishwashing];
+
+export type DailyPerformance = {
+  location: string;
+  "Water Usage Hand Washing": number;
+  "Water Usage Dishwashing": number;
+};
+
+export default function ChartView() {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
+    <>
+      <Card>
+        <Title>Water Usage Comparison in Dining Locations</Title>
+        <Subtitle>
+          Compare water usage for hand washing and dishwashing in different dining locations.
+        </Subtitle>
+        <BarChart
+          className="mt-6"
+          data={chartdata}
+          index="location"
+          categories={["Water Usage Hand Washing", "Water Usage Dishwashing"]}
+          colors={["blue", "green"]}
+          valueFormatter={valueFormatter}
+          yAxisWidth={48}
+        />
+      </Card>
+    </>
+  );
 }
