@@ -1,35 +1,35 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Head from "next/head";
-import { ChargeView } from "~/components/ModeToggle";
+// import { ChargeView } from "~/components/ModeToggle";
 import Footer from '../components/Footer';
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger,
+// } from "ComponentsUI/ui/tooltip"
 
 
-import { Button } from "ComponentsUI/ui/button";
+// import { Button } from "ComponentsUI/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
+  // CardDescription,
+  // CardFooter,
   CardHeader,
   CardTitle,
 } from "ComponentsUI/ui/card"
 import { Input } from "ComponentsUI/ui/input"
-import { Label } from "ComponentsUI/ui/label"
+// import { Label } from "ComponentsUI/ui/label"
 // import { api } from "~/utils/api";
 
 import * as React from "react"
-import { Moon, SearchIcon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import  ChartView from "~/components/ModeToggle"; 
-import { DonutChart, Title, Legend, Divider, Text, Tracker, Flex, Color, BadgeDelta, TextInput } from "@tremor/react";
+// import { Moon, SearchIcon, Sun } from "lucide-react"
+// import { useTheme } from "next-themes"
+// import  ChartView from "~/components/ModeToggle"; 
+import { DonutChart, Title, Legend, Divider, Text, Tracker, type Color, Flex, BadgeDelta } from "@tremor/react";
 
 import {
   Tabs,
@@ -58,7 +58,7 @@ export default function Home() {
 
   // const hello = api.post.hello.useQuery({ text: "from tRPC" });
   // const user = useUser();
-  const modeToggle = ChartView();
+  // const modeToggle = ChartView();
 
   const buildings = [
     {
@@ -337,7 +337,7 @@ By monitoring this graph, we're not only tracking the performance of these innov
                     <div className="text-center">
           <p className="text-slate-100 text-6xl m-20 mb-3 align-middle">That wraps it up for now! If you're excited about staying in the loop with future energy advancements and showing your support, join us by signing up with your email! We can't wait to have you on board as we journey together towards a brighter, more sustainable future!</p>
           <div className="mx-auto w-96 mt-12 mb-0">
-            <TextInput icon={SearchIcon} placeholder="Sign up..." />
+          <Input className="rounded-md" type="email" placeholder="Email" />
           </div>
         </div>
 
