@@ -95,8 +95,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="container mx-auto p-4  dark:text-stone-50">
-              <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4 text-center">
+          <div className="container mx-auto p-4 mt-8  dark:text-stone-50 text-center">
+            <div className="flex flex-col items-center">
+            <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
                 Water Usage on Campus
               </h3>
               <Tabs defaultValue="reducing-water-consumption" className="w-fill">
@@ -109,9 +110,6 @@ export default function Home() {
                   <Card>
                     <CardHeader>
                       <CardTitle>Reducing Water Consumption</CardTitle>
-                      <CardDescription>
-                        Make changes to your reducing-water-consumption here. Click save when you're done.
-                      </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
                     Discuss the importance of conserving water resources on campus.
@@ -163,9 +161,12 @@ export default function Home() {
                   </Card>
                 </TabsContent>
               </Tabs>
+              </div>
           </div>
 
           <div className="container mx-auto p-4 mt-8  dark:text-stone-50">
+            <div className="flex flex-col items-center">
+
               <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
                 Overall Waste
               </h3>
@@ -227,9 +228,12 @@ export default function Home() {
                   </Card>
                 </TabsContent>
               </Tabs>
+              </div>
           </div>
 
-          <div className="container mx-auto p-4 mt-8  dark:text-stone-50">
+          <div className="container mx-auto p-4 mt-8  dark:text-stone-50 mb-56">
+          <div className="flex flex-col items-center">
+
               <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
                 Energy Usage
               </h3>
@@ -291,6 +295,7 @@ export default function Home() {
                   </Card>
                 </TabsContent>
               </Tabs>
+              </div>
           </div>
         </main>
         <Footer />
