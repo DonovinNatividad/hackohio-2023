@@ -4,6 +4,14 @@ import Head from "next/head";
 import { ChargeView } from "~/components/ModeToggle";
 import Footer from '../components/Footer';
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+
+
 import { Button } from "ComponentsUI/ui/button";
 import {
   Card,
@@ -18,9 +26,10 @@ import { Label } from "ComponentsUI/ui/label"
 // import { api } from "~/utils/api";
 
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
+import { Moon, SearchIcon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import  ChartView from "~/components/ModeToggle"; 
+import { DonutChart, Title, Legend, Divider, Text, Tracker, Flex, Color, BadgeDelta, TextInput } from "@tremor/react";
 
 import {
   Tabs,
@@ -50,6 +59,71 @@ export default function Home() {
   // const hello = api.post.hello.useQuery({ text: "from tRPC" });
   // const user = useUser();
   const modeToggle = ChartView();
+
+  const buildings = [
+    {
+      name: "Ohio Union",
+      energy: 9800,
+    },
+    {
+      name: "Thompson",
+      energy: 4000,
+    },
+    {
+      name: "The Shoe",
+      energy: 15034,
+    },
+    {
+      name: "RPAC",
+      energy: 13005,
+    },
+    {
+      name: "Jesse Owens South",
+      energy: 1398,
+    },
+    {
+      name: "Orton Hall",
+      energy: 1200,
+    },
+  ];
+
+  interface Tracker {
+    color: Color;
+    tooltip: string;
+  }
+  
+  const data: Tracker[] = [
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "rose", tooltip: "Downtime" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "gray", tooltip: "Maintenance" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "emerald", tooltip: "Operational" },
+    { color: "yellow", tooltip: "Degraded" },
+    { color: "emerald", tooltip: "Operational" },
+  ];
+  
+
+  const valueFormatter = (number: number | bigint) => `$ ${new Intl.NumberFormat("us").format(number).toString()}`;
+  const [value, setValue] = React.useState(null);
+
   return (
     <>
       <div className={darkMode ? "dark" : ""}>
@@ -107,65 +181,30 @@ export default function Home() {
           <div className="container mx-auto p-4 mt-8  dark:text-stone-50 text-center">
             <div className="flex flex-col items-center">
             <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
-                Water Usage on Campus
+            EcoTech Innovations: Mastering Water Responsibility for a Sustainable Future
               </h3>
               <Tabs defaultValue="reducing-water-consumption" className="w-fill">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="reducing-water-consumption" className="">Reducing Potable Water Consumption</TabsTrigger>
-                  <TabsTrigger value="responsible-water-habits">Promoting Responsible Water Habits</TabsTrigger>
-                  <TabsTrigger value="water-conservation-achievements">Water Conservation Acheievments</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="water-technologies" className="text-xl">Water technologies and Awareness</TabsTrigger>
+                  <TabsTrigger value="responsible-water-habits" className="text-xl">Promoting Responsible Water Habits</TabsTrigger>
                 </TabsList>
-                <TabsContent value="reducing-water-consumption">
+                <TabsContent value="water-technologies">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Reducing Water Consumption</CardTitle>
+                      <CardTitle>Water technologies and Awareness</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                    Discuss the importance of conserving water resources on campus.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Highlight initiatives such as low-flow fixtures, rainwater harvesting, and water-efficient landscaping that aim to reduce potable water usage.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Explain how these efforts contribute to the university's sustainability goals.
+                    As we work towards a sustainable future, our innovative water-saving technologies and rainwater harvesting systems will inspire the campus community to change their water consumption habits. Our goal is to raise awareness about the significance of water conservation, fostering a mindset of responsible water use.
                     </CardContent>
                   </Card>
                 </TabsContent>
                 <TabsContent value="responsible-water-habits">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Responsible Water Habits</CardTitle>
-                      <CardDescription>
-                      Educate users on the significance of individual water conservation practices.
-                      </CardDescription>
+                      <CardTitle>AI integrations and Culture of Responsibility</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                    Encourage simple actions like turning off taps, reporting leaks, and using water responsibly in daily activities.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Showcase the collective impact of small changes in behavior.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Explain how these efforts contribute to the university's sustainability goals.
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-                <TabsContent value="water-conservation-achievements">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Water Conservation Achievements</CardTitle>
-                      <CardDescription>
-                      Share data on the reduction of water consumption over time.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                    Discuss the importance of conserving water resources on campus.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Highlight specific buildings or areas that have made substantial progress in water conservation.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Recognize water-efficient practices in campus landscaping and irrigation.
+                    Engaging smart sensors and AI algorithms will not only optimize water use but also motivate individuals to participate actively in water-saving challenges. Through real-time data and immersive VR experiences, we aim to create a culture of awareness and personal responsibility in water management.
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -177,62 +216,32 @@ export default function Home() {
             <div className="flex flex-col items-center">
 
               <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
-                Overall Waste
+              Revolutionizing Tomorrow: The Future of Energy Consumption
               </h3>
               <Tabs defaultValue="reducing-water-consumption" className="w-fill text-center">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="achieving-zero-waste" className="text-xl">Acheiving Zero Waste Goals</TabsTrigger>
-                  <TabsTrigger value="waste-sorting" className="text-xl">Waste Sorting and Recycling Programs</TabsTrigger>
-                  <TabsTrigger value="sustainability-in-procurement" className="text-xl">Sustainability in Procurement</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="achieving-zero-waste" className="text-xl">AI-Driven Energy management</TabsTrigger>
+                  <TabsTrigger value="energy-practices" className="text-xl">Embracing energy practices with technology</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="achieving-zero-waste">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Achieving Zero Waste</CardTitle>
+                      <CardTitle>Taking control of energy</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2 text-center">
-                    Explain the university's commitment to achieving zero waste.
-                    </CardContent>
-                    <CardContent className="space-y-2 text-center">
-                    Describe the strategies in place for waste reduction, recycling, and composting.
-                    </CardContent>
-                    <CardContent className="space-y-2 text-center">
-                    Share statistics on waste diversion rates and progress toward zero waste targets.
+                    Our energy efficiency initiatives will spark a behavioral shift on campus, as smart buildings, IoT devices, and AI-driven energy management systems lead the way. We aspire to empower individuals to take control of their energy consumption.
                     </CardContent>
                   </Card>
                 </TabsContent>
 
-                <TabsContent value="waste-sorting">
+                <TabsContent value="energy-practices">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Waste Sorting</CardTitle>
+                      <CardTitle>Energy dashboards</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                    Provide information on waste sorting guidelines in different areas of the campus.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Offer tips on how users can properly separate recyclables, compostables, and landfill waste.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Highlight the benefits of recycling and composting.
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="sustainability-in-procurement">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Sustainability in Procurements</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                    Discuss the efforts to source environmentally preferred products and services.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Explain how sustainable procurement choices contribute to reducing waste and the university's carbon footprint.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Encourage users to support sustainable purchasing decisions.
+                    Energy dashboards with augmented reality overlays and user-friendly apps will make energy conservation a daily habit, raising awareness about the impact of energy use on the environment. Our vision is to inspire students and staff to embrace sustainable energy practices.
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -240,49 +249,53 @@ export default function Home() {
               </div>
           </div>
 
+          <div className="container mx-auto mt-16 p-4 ">
+                <div className="border-2 shadow-xl border-black dark:border-white rounded p-4">
+                  <Title className="text-4xl text-center m-4">Energy Usage of Buildings across campus</Title>
+                  <DonutChart
+                    className="mt-6"
+                    data={buildings}
+                    category="energy"
+                    index="name"
+                    colors={["rose", "yellow", "orange", "indigo", "blue", "emerald"]}
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                    onValueChange={(v) => setValue(v)}
+                  />
+                  <Legend
+                className="mt-3 text"
+                categories={["Thompson", "Ohio Union", "The Shoe", "RPAC", "Jesse Owens South", "Orton Hall"]}
+                colors={["rose", "yellow", "orange", "indigo", "blue", "emerald"]}
+              />
+              <Divider className="">Description</Divider>
+              <Text className="mt-2">
+              Presented here is an illustrative graph, providing a glimpse of what an energy dashboard across our campus might display. It showcases real-time energy input data, offering users a dynamic view of which buildings are currently consuming the highest energy (in kilowatts). This insightful visualization not only informs but inspires.
+
+As you explore this data, innovative ideas may ignite within you. It's a spark, a catalyst for brainstorming how to curtail energy waste in these high-consuming structures. The goal is clear: to pave the way for a campus that is not just intelligent but profoundly sustainable.
+
+The energy dashboard serves as a window into our collective efforts toward creating a greener, more efficient future. By identifying energy hogs and advocating for responsible consumption, we chart a course toward a smarter, eco-conscious campus community.
+              </Text>
+            </div>
+            </div>
+
           <div className="container mx-auto p-4 mt-8  dark:text-stone-50 mb-56">
           <div className="flex flex-col items-center">
 
               <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
-                Energy Usage
+              Forging a Sustainable Future: A Revolution in Waste Reduction and Conscious Consumption
               </h3>
               <Tabs defaultValue="reducing-water-consumption" className="w-fill text-center">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="increasing-energy-efficiency" className="text-xl">Increasing Building Energy Efficiency</TabsTrigger>
-                  <TabsTrigger value="energy-dashboards" className="text-xl">Energy dashboards</TabsTrigger>
-                  <TabsTrigger value="behavioral-change" className="text-xl">Behavioral Change for Energy Conservation</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="robotic-sorting" className="text-xl">Robotic Waste Sorting Systems</TabsTrigger>
+                  <TabsTrigger value="behavioral-change" className="text-xl">Blockchain Activism and Action</TabsTrigger>
                 </TabsList>
 
-                <TabsContent value="increasing-energy-efficiency">
+                <TabsContent value="robotic-sorting">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Increasing Energy Efficiency</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-center">
-                    Describe campus-wide energy efficiency initiatives, including building upgrades, smart lighting, and HVAC improvements.
-                    </CardContent>
-                    <CardContent className="space-y-2 text-center">
-                    Showcase buildings that have undergone energy-efficient transformations.
-                    </CardContent>
-                    <CardContent className="space-y-2 text-center">
-                    Share data on energy savings and reduced carbon emissions.
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="energy-dashboards">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Energy Dashboards</CardTitle>
+                      <CardTitle>Robotic Waste Sorting Systems</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                    Mention the availability of energy dashboards for different parts of the campus.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Explain how these dashboards provide real-time data on energy consumption, allowing users to monitor and compare energy usage.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Encourage students and staff to check these dashboards regularly.
+                    In the near future, our robotic waste sorting systems and gamified AR applications will make waste reduction an exciting and educational journey. We aim to promote a culture of responsible waste sorting and recycling.
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -290,21 +303,46 @@ export default function Home() {
                 <TabsContent value="behavioral-change">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Behavioral Change for Energy Consumption</CardTitle>
+                      <CardTitle>Blockchain Activism and Action</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                    Emphasize the role of individual actions in reducing energy consumption.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Provide tips for energy conservation in dorms, offices, and classrooms.
-                    </CardContent>
-                    <CardContent className="space-y-2">
-                    Create awareness of how small changes, like turning off lights or using energy-efficient appliances, can collectively make a big difference.
+                    Through blockchain-supported sustainable procurement practices, we will encourage the campus community to be mindful of the products they choose, fostering an awareness of the broader impact of sustainable consumption on the environment. Our goal is to inspire behavior change and active participation in the Smart Campus Challenge.
                     </CardContent>
                   </Card>
                 </TabsContent>
               </Tabs>
               </div>
+
+              <div className="container mx-auto mt-16 p-4 ">
+                <div className="border-2 shadow-xl border-black dark:border-white rounded p-4">
+                <Title className="text-4xl text-left m-4 ml-0">Uptime of AI Waste Sorter</Title>
+                <BadgeDelta deltaType="increase">Live now</BadgeDelta>
+                  <Text>Dreese Labs &bull; October 2023</Text>
+                  <Flex justifyContent="end" className="mt-4">
+                    <Text>Uptime 92%</Text>
+                  </Flex>
+                  <Tracker data={data} className="mt-2" />
+                  <Divider className="">Description</Divider>
+              <Text className="mt-2">
+              Welcome to the Dreese Labs AI Waste Sorter Uptime Tracker. This graph provides real-time insights into the operational performance of our cutting-edge AI robotic waste sorting systems and engaging AR applications. Situated at the heart of innovation in Dreese Labs, this graphical representation offers a dynamic view of the systems' uptime.
+
+As these technologies power our mission to make waste reduction not only efficient but also exciting and educational, this graph serves as a vital dashboard. It illustrates the continuous availability and reliability of our AI waste sorter and AR gamification applications.
+
+By monitoring this graph, we're not only tracking the performance of these innovative solutions but also witnessing our commitment to promoting a culture of responsible waste sorting and recycling. Join us on this journey toward a greener, more sustainable future right here at Dreese Labs.
+              </Text>
+              </div>
+            </div>
+              
+              
+                    <div className="text-center">
+          <p className="text-slate-100 text-6xl m-20 mb-3 align-middle">That wraps it up for now! If you're excited about staying in the loop with future energy advancements and showing your support, join us by signing up with your email! We can't wait to have you on board as we journey together towards a brighter, more sustainable future!</p>
+          <div className="mx-auto w-96 mt-12 mb-0">
+            <TextInput icon={SearchIcon} placeholder="Sign up..." />
+          </div>
+        </div>
+
+              
+
           </div>
         </main>
         <Footer />
