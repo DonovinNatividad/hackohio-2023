@@ -164,6 +164,70 @@ export default function Home() {
                 </TabsContent>
               </Tabs>
           </div>
+
+          <div className="container mx-auto p-4 mt-8">
+              <h3 className="text-5xl mb-1.5 ml-24 dark:text-stone-50 mt-10 text-center">
+                Overall Waste
+              </h3>
+              <Tabs defaultValue="reducing-water-consumption" className="w-fill text-center">
+                <TabsList className="grid w-full grid-cols-3">
+                  <TabsTrigger value="achieving-zero-waste" className="text-xl">Acheiving Zero Waste Goals</TabsTrigger>
+                  <TabsTrigger value="waste-sorting" className="text-xl">Waste Sorting and Recycling Programs</TabsTrigger>
+                  <TabsTrigger value="sustainability-in-procurement" className="text-xl">Sustainability in Procurement</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="achieving-zero-waste">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Achieving Zero Waste</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2 text-center">
+                    Explain the university's commitment to achieving zero waste.
+                    </CardContent>
+                    <CardContent className="space-y-2 text-center">
+                    Describe the strategies in place for waste reduction, recycling, and composting.
+                    </CardContent>
+                    <CardContent className="space-y-2 text-center">
+                    Share statistics on waste diversion rates and progress toward zero waste targets.
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="waste-sorting">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Waste Sorting</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                    Provide information on waste sorting guidelines in different areas of the campus.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Offer tips on how users can properly separate recyclables, compostables, and landfill waste.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Highlight the benefits of recycling and composting.
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="sustainability-in-procurement">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Sustainability in Procurements</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                    Discuss the efforts to source environmentally preferred products and services.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Explain how sustainable procurement choices contribute to reducing waste and the university's carbon footprint.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Encourage users to support sustainable purchasing decisions.
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
+          </div>
         </main>
         <Footer />
       </div>
