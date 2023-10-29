@@ -95,7 +95,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="container mx-auto p-4">
+          <div className="container mx-auto p-4  dark:text-stone-50">
               <h3 className="text-5xl text-left mb-1.5 ml-24 dark:text-stone-50 mt-4 text-center">
                 Water Usage on Campus
               </h3>
@@ -165,8 +165,8 @@ export default function Home() {
               </Tabs>
           </div>
 
-          <div className="container mx-auto p-4 mt-8">
-              <h3 className="text-5xl mb-1.5 ml-24 dark:text-stone-50 mt-10 text-center">
+          <div className="container mx-auto p-4 mt-8  dark:text-stone-50">
+              <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
                 Overall Waste
               </h3>
               <Tabs defaultValue="reducing-water-consumption" className="w-fill text-center">
@@ -223,6 +223,70 @@ export default function Home() {
                     </CardContent>
                     <CardContent className="space-y-2">
                     Encourage users to support sustainable purchasing decisions.
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
+          </div>
+
+          <div className="container mx-auto p-4 mt-8  dark:text-stone-50">
+              <h3 className="text-5xl mb-1.5 dark:text-stone-50 mt-10 text-center">
+                Energy Usage
+              </h3>
+              <Tabs defaultValue="reducing-water-consumption" className="w-fill text-center">
+                <TabsList className="grid w-full grid-cols-3">
+                  <TabsTrigger value="increasing-energy-efficiency" className="text-xl">Increasing Building Energy Efficiency</TabsTrigger>
+                  <TabsTrigger value="energy-dashboards" className="text-xl">Energy dashboards</TabsTrigger>
+                  <TabsTrigger value="behavioral-change" className="text-xl">Behavioral Change for Energy Conservation</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="increasing-energy-efficiency">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Increasing Energy Efficiency</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2 text-center">
+                    Describe campus-wide energy efficiency initiatives, including building upgrades, smart lighting, and HVAC improvements.
+                    </CardContent>
+                    <CardContent className="space-y-2 text-center">
+                    Showcase buildings that have undergone energy-efficient transformations.
+                    </CardContent>
+                    <CardContent className="space-y-2 text-center">
+                    Share data on energy savings and reduced carbon emissions.
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="energy-dashboards">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Energy Dashboards</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                    Mention the availability of energy dashboards for different parts of the campus.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Explain how these dashboards provide real-time data on energy consumption, allowing users to monitor and compare energy usage.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Encourage students and staff to check these dashboards regularly.
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="behavioral-change">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Behavioral Change for Energy Consumption</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                    Emphasize the role of individual actions in reducing energy consumption.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Provide tips for energy conservation in dorms, offices, and classrooms.
+                    </CardContent>
+                    <CardContent className="space-y-2">
+                    Create awareness of how small changes, like turning off lights or using energy-efficient appliances, can collectively make a big difference.
                     </CardContent>
                   </Card>
                 </TabsContent>
